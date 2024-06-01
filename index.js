@@ -9,11 +9,15 @@ const connectDB = require('./DataBase/database')
 const { configDotenv } = require('dotenv')
 require('dotenv').config()
 
+const allowedOrigins = ['https://bhaskar-bisht.github.io/mern_ecommerce/'];
+
 
 const app = express();
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: allowedOrigins
+}))
 
 // connect mongodb
 // mongoose.connect("mongodb://bantu8120:bantu8120@ac-cnqzbig-shard-00-00.z6von2p.mongodb.net:27017,ac-cnqzbig-shard-00-01.z6von2p.mongodb.net:27017,ac-cnqzbig-shard-00-02.z6von2p.mongodb.net:27017/?ssl=true&replicaSet=atlas-axc2z1-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0")
