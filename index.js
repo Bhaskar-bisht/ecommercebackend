@@ -9,14 +9,15 @@ const connectDB = require('./DataBase/database')
 const { configDotenv } = require('dotenv')
 require('dotenv').config()
 
-const allowedOrigins = ['https://bhaskar-bisht.github.io/mern_ecommerce/'];
+// const allowedOrigins = ['http://localhost:5173'];
 
 
 const app = express();
 
 app.use(express.json())
 app.use(cors({
-    origin: allowedOrigins
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 }))
 
 // connect mongodb
