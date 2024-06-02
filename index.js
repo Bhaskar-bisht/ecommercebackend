@@ -123,6 +123,10 @@ app.post('/addproduct', async(req , res) => {
     })
 })
 
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+  });
+
 
 app.post('/removeproduct', async (req, res) => {
     await Product.findOneAndDelete({id: req.body.id})
